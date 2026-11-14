@@ -1,0 +1,19 @@
+# environments / caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# secrets
+.env
+# frontend
+node_modules/
+# data that must be downloaded, not committed
+WESAD/
+MIMIC*/
+*.zip
+# old prototype outputs
+checkpoints/
+# local scratch
+test.py
+test_data.py
