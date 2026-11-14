@@ -42,4 +42,5 @@ def summarize(y_true, y_pred, n_classes):
             "per_class_recall": per_class_recall(cm),
             "support": cm.sum(axis=1).tolist(),
             "majority_class_baseline": float(cm.sum(axis=1).max() / n) if n else 0.0,
+            "chance_balanced_accuracy": float(1.0 / max(1, int((cm.sum(axis=1) > 0).sum()))),
             "confusion_matrix": cm.tolist()}

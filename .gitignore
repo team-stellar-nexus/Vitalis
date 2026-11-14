@@ -17,3 +17,4 @@ checkpoints/
 # local scratch
 test.py
 test_data.py
+Dataset/

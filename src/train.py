@@ -103,7 +103,7 @@ def evaluate(model, dataloader, criterion, device):
 def main():
     parser = argparse.ArgumentParser(description="Train Astronaut Health Encoder")
     parser.add_argument("--dataset", type=str,
-                        default=str(Path(__file__).resolve().parents[2] / "Dataset"),   # <repo root>/Dataset
+                        default=str(Path(__file__).resolve().parents[1] / "Dataset"),   # <repo root>/Dataset
                         help="Path to Dataset/ folder")
     parser.add_argument("--signal", type=str, default="E4_BVP",
                         help="Signal to train on: E4_BVP, PolarH10_ECG, etc.")
@@ -286,9 +286,10 @@ def main():
         groups[g][0].extend(y_.tolist()); groups[g][1].extend(p_.tolist())
     per_dataset = {g: summarize(y_, p_, config.num_classes) for g, (y_, p_) in groups.items()}
     overall = summarize(labels, preds, config.num_classes)
-    print("\nPer-dataset test results (balanced accuracy / always-majority baseline):")
+    print("\nPer-dataset test results:")
     for g, m in per_dataset.items():
-        print(f"  {g}: {m['balanced_accuracy']:.1%} / {m['majority_class_baseline']:.1%}  ({m['n_windows']} windows)")
+        print(f"  {g}: balanced acc {m['balanced_accuracy']:.1%} (chance {m['chance_balanced_accuracy']:.1%}), "
+              f"accuracy {m['accuracy']:.1%} (always-majority {m['majority_class_baseline']:.1%})  ({m['n_windows']} windows)")
 
     classes = ["not stress", "stress"] if config.num_classes == 2 else ["low", "moderate", "high"]
     with open(os.path.join(config.save_dir, "metrics.json"), "w") as f:

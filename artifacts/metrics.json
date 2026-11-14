@@ -1,0 +1,76 @@
+{
+  "test_overall": {
+    "n_windows": 570,
+    "accuracy": 0.6421052631578947,
+    "balanced_accuracy": 0.5866833311499376,
+    "macro_f1": 0.5417320964689386,
+    "per_class_recall": [
+      0.6912181303116147,
+      0.5804597701149425,
+      0.4883720930232558
+    ],
+    "support": [
+      353,
+      174,
+      43
+    ],
+    "majority_class_baseline": 0.6192982456140351,
+    "chance_balanced_accuracy": 0.3333333333333333,
+    "confusion_matrix": [
+      [
+        244,
+        54,
+        55
+      ],
+      [
+        44,
+        101,
+        29
+      ],
+      [
+        9,
+        13,
+        21
+      ]
+    ]
+  },
+  "test_per_dataset": {
+    "GalaxyPPG": {
+      "n_windows": 570,
+      "accuracy": 0.6421052631578947,
+      "balanced_accuracy": 0.5866833311499376,
+      "macro_f1": 0.5417320964689386,
+      "per_class_recall": [
+        0.6912181303116147,
+        0.5804597701149425,
+        0.4883720930232558
+      ],
+      "support": [
+        353,
+        174,
+        43
+      ],
+      "majority_class_baseline": 0.6192982456140351,
+      "chance_balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          244,
+          54,
+          55
+        ],
+        [
+          44,
+          101,
+          29
+        ],
+        [
+          9,
+          13,
+          21
+        ]
+      ]
+    }
+  },
+  "best_val_balanced_accuracy": 0.675381292622672,
+  "best_epoch": 9
+}

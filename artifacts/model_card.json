@@ -1,0 +1,41 @@
+{
+  "name": "Astronaut Health Encoder (HealthClassifier, 1D-CNN residual encoder + linear head)",
+  "created": "2026-11-15T01:02:09",
+  "intended_use": "Stress-pattern indicator from wrist PPG/BVP for a hackathon prototype. Decision support only, not a medical device.",
+  "input": {
+    "signal": "E4_BVP",
+    "window_seconds": 30,
+    "sample_rate_hz": 25,
+    "samples": 750,
+    "preprocessing": "band-pass 0.5-8 Hz, resample to 25 Hz, per-window z-score"
+  },
+  "classes": [
+    "low",
+    "moderate",
+    "high"
+  ],
+  "training_data": {
+    "GalaxyPPG": true,
+    "WESAD": false
+  },
+  "split": {
+    "val": [
+      "P07",
+      "P14",
+      "P21"
+    ],
+    "test": [
+      "P10",
+      "P17",
+      "P24"
+    ]
+  },
+  "parameters": 302723,
+  "metrics_file": "metrics.json",
+  "limitations": [
+    "Lab-study data, not spaceflight data",
+    "Small held-out sets (a few participants)",
+    "Class 'moderate' mixes several different tasks",
+    "Compare balanced accuracy against the majority-class baseline in metrics.json"
+  ]
+}
