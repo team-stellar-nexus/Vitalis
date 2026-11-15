@@ -303,10 +303,10 @@ Parts of the code, debugging and documentation were produced with help from Clau
 
 | Name | Role | GitHub |
 |---|---|---|
-| Mannat and Subh | Research and concept (LIGO-inspired design) | [@mlamba0488](https://github.com/mlamba0488), [@ShubhJK](https://github.com/ShubhJK) |
+| Mannat and Bhavishya | Research and concept (LIGO-inspired design) | [@mlamba0488](https://github.com/mlamba0488), [@ba15kaushik](https://github.com/ba15kaushik) |
 | Shaurya Pandey | Backend, ML pipeline and API | [@Shaurya-ey](https://github.com/Shaurya-ey) |
 | Rehat Paul Singh | Frontend and dashboard | [@rehat2009](https://github.com/rehat2009) |
-| `TODO` | `TODO` | `TODO` |
+| Subhjot Kaur | Visual story teller and Graphic Designer | [@ShubhJK](https://github.com/ShubhJK) |
 
 Built for the **NASA International Space Apps Challenge 2026**. Challenge: `Create Health Monitoring Software for Astronauts on Space Missions`.
 
