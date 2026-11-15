@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+backend/.venv/
+
+# local env (never commit real values)
+.env
+.env.local
+.env.*.local
+
+# builds and logs
+dist/
+backend/uvicorn.log
+dev.log
+*.tsbuildinfo
+
+# python
+__pycache__/
+*.pyc
