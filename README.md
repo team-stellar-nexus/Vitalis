@@ -1,8 +1,7 @@
 
 <h1 align="center">Vitalis</h1>
 <p align="center">
-<img width="612" height="408" alt="WhatsApp Image 2026-11-15 at 12 36 02-Photoroom" src="https://github.com/user-attachments/assets/052c2d76-2449-4e92-ad9d-35404516396c" />
-<img width="612" height="408" alt="WhatsApp Image 2026-11-15 at 12 36 02" src="https://github.com/user-attachments/assets/ed0ccfdc-a153-4ea8-a150-758df7025847" />
+<img width="375" height="262" alt="final1" src="https://github.com/user-attachments/assets/4d9ed823-a57b-4725-beca-88f710c6e997" />
 
 </p>
 <div align="center">
