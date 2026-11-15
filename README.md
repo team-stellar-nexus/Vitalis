@@ -297,12 +297,12 @@ Parts of the code, debugging and documentation were produced with help from Clau
 
 | Name | Role | GitHub |
 |---|---|---|
-| Shaurya | Backend, ML pipeline and API | [@Shaurya-ey](https://github.com/Shaurya-ey) |
-| `TODO` | Frontend and dashboard | `TODO` |
 | `TODO` | Research and concept (LIGO-inspired design) | `TODO` |
+| Shaurya Pandey | Backend, ML pipeline and API | [@Shaurya-ey](https://github.com/Shaurya-ey) |
+| Rehat Paul Singh | Frontend and dashboard | [@rehat2009](https://github.com/rehat2009) |
 | `TODO` | `TODO` | `TODO` |
 
-Built for the **NASA International Space Apps Challenge 2026**. Challenge: `TODO add the challenge name`.
+Built for the **NASA International Space Apps Challenge 2026**. Challenge: `Create Health Monitoring Software for Astronauts on Space Missions`.
 
 ## MIT License
 
