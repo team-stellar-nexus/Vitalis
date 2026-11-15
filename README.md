@@ -16,7 +16,7 @@
 ![NASA Space Apps 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026-0b3d91)
 ![Status](https://img.shields.io/badge/status-prototype-orange)
 
-**Dashboard:** `TODO` &nbsp;|&nbsp; **Demo video:** `TODO` &nbsp;|&nbsp; **Slides:** `TODO`
+**Dashboard:** [Here!]()&nbsp;|&nbsp; **Demo video:** [Here!]() &nbsp;|&nbsp; **Slides:** [Here!]()
 
 </div>
 
