@@ -286,6 +286,8 @@ See [`frontend/README.md`](frontend/README.md) for how to run it.
 | **GalaxyPPG** | Training and evaluation of the stress classifier | Park, S., Zheng, D., Lee, U. (2025). *A PPG Signal Dataset Collected in Semi-Naturalistic Settings Using Galaxy Watch.* Scientific Data 12:892. doi:10.1038/s41597-025-05152-z. Dataset: Zenodo, doi:10.5281/zenodo.14635823. Code: [Kaist-ICLab/GalaxyPPG-Supplementary-Code](https://github.com/Kaist-ICLab/GalaxyPPG-Supplementary-Code) |
 | **WESAD** | Cross-dataset testing and respiration validation | Schmidt, P. et al. (2018). *Introducing WESAD, a Multimodal Dataset for Wearable Stress and Affect Detection.* ICMI 2018. [UCI repository](https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection). Scientific, non-commercial use with credit to the authors |
 | **NASA Open Science Data Repository** (Inspiration4: OSD-571, OSD-575) | Context and the planned biomarker reference module, not model training | Data courtesy of the NASA Open Science Data Repository, https://osdr.nasa.gov/bio/repo. Gebre et al. (2024), *Nucleic Acids Research*, doi:10.1093/nar/gkae1116 |
+|||
+|||
 
 Not used: the MIMIC-III Waveform Database (ICU data without stress labels) and the OSD metagenomics studies.
 Each dataset keeps its own license, which is summarised in [`docs/DATA.md`](docs/DATA.md). Full references are in
@@ -297,7 +299,7 @@ Parts of the code, debugging and documentation were produced with help from Clau
 
 | Name | Role | GitHub |
 |---|---|---|
-| `TODO` | Research and concept (LIGO-inspired design) | `TODO` |
+| Mannat and Subh | Research and concept (LIGO-inspired design) | [@mlamba0488](https://github.com/mlamba0488), [@ShubhJK](https://github.com/ShubhJK) |
 | Shaurya Pandey | Backend, ML pipeline and API | [@Shaurya-ey](https://github.com/Shaurya-ey) |
 | Rehat Paul Singh | Frontend and dashboard | [@rehat2009](https://github.com/rehat2009) |
 | `TODO` | `TODO` | `TODO` |
