@@ -63,7 +63,7 @@ export interface ReportPayload {
   cabin_co2_ppm?: number | null;
 }
 
-const DEFAULT_BASE_URL = 'http://localhost:8000';
+const DEFAULT_BASE_URL = 'https://vitalis-api-yjc1.onrender.com';
 
 export const VITALIS_API_BASE_URL = (
   (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? DEFAULT_BASE_URL

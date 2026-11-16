@@ -1,0 +1,27 @@
+{
+  "project": "Vitalis",
+  "challenge": "NASA Space Apps Challenge 2026",
+  "ai_disclosure": {
+    "tools": [
+      {
+        "name": "Claude",
+        "provider": "Anthropic",
+        "usage": [
+          "PPG preprocessing assistance",
+          "Convolutional autoencoder development",
+          "Synthetic data testing",
+          "FastAPI debugging",
+          "Testing script development",
+          "Technical documentation"
+        ]
+      }
+    ],
+    "data_disclosure": {
+      "real_data_used": true,
+      "synthetic_data_used": true,
+      "synthetic_data_purpose": "Pipeline testing and demonstration",
+      "ai_generated_dataset": "Not established; verify dataset provenance before submission"
+    },
+    "human_review": true
+  }
+}
