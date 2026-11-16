@@ -313,11 +313,29 @@ development of Vitalis.
   improvements. All generated or suggested code was reviewed,
   tested, and integrated by the development team.
 
-- **Data Processing:** AI assistance was used for [describe actual
-  data-processing tasks, if applicable].
+- **Data Processing:**
+**Claude (Anthropic)**
 
-- **Model Development:** [Disclose any AI assistance used in model
-  architecture, training, evaluation, or optimization.]
+Claude was used as a development assistant for selected parts of the project's machine learning and software engineering workflow.
+
+Its contributions included:
+
+- **Signal Preprocessing:** Assistance with developing PPG preprocessing workflows, including resampling, Butterworth band-pass filtering, window segmentation, and spectrogram generation.
+- **Model Development:** Assistance with designing and implementing a convolutional autoencoder for anomaly detection using time-frequency representations of PPG signals.
+- **Synthetic Data Testing:** Assistance with generating synthetic PPG signals to test preprocessing and model-training workflows.
+- **Backend Development:** Assistance with debugging FastAPI integration, model loading, API configuration, and deployment-related issues.
+- **Testing & Validation:** Assistance with developing testing scripts and evaluating the end-to-end pipeline.
+- **Documentation:** Assistance with technical explanations, code documentation, and README preparation.
+
+### Data Transparency
+
+Vitalis distinguishes between real physiological datasets and simulated demonstration signals.
+
+- Real datasets are attributed to their original sources.
+- Synthetic signals are identified as simulated data.
+- Model predictions from simulated signals are intended for technical demonstration and are not presented as clinically validated findings.
+
+AI assistance does not imply that the model's predictions or medical interpretations are independently validated.
 
 - **Documentation:** AI tools assisted in preparing and improving
   selected project documentation.
@@ -327,6 +345,8 @@ development of Vitalis.
 The project architecture, technical decisions, integration,
 verification, and final implementation were reviewed and validated
 by the team. 
+
+---
 
 ## Team Stellar Nexus
 
