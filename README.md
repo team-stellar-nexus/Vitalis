@@ -32,8 +32,9 @@
 6. [Installation and setup](#installation-and-setup)
 7. [Running the application](#running-the-application)
 8. [Dataset acknowledgements](#dataset-acknowledgements)
-9. [Team Stellar Nexus](#team-stellar-nexus)
-10. [MIT License](#mit-license)
+9. [AI / SI Usage & Disclosure](#ai--si-usage--disclosure)
+10. [Team Stellar Nexus](#team-stellar-nexus)
+11. [MIT License](#mit-license)
 
 ---
 
