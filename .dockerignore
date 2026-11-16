@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+Dataset/
+WESAD/
+data_nasa/
+artifacts_*/
+frontend/
+node_modules/
+.git/
+tests/
+docs/
+*.zip
