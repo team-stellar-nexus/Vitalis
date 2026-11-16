@@ -16,8 +16,7 @@
 ![NASA Space Apps 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026-0b3d91)
 ![Status](https://img.shields.io/badge/status-prototype-orange)
 
-**Dashboard:** [Here!]()&nbsp;|&nbsp; **Demo video:** <a href="
-" target="_blank" rel="noopener noreferrer">Watch Demo Video</a> &nbsp;|&nbsp; **Slides:** [Here!]()
+**Dashboard:** [Here!](https://vitalis-stellar.vercel.app/)&nbsp;|&nbsp; **Demo video:** <a href="Demo_video.mp4" target="_blank" rel="noopener noreferrer">Watch Demo Video</a> &nbsp;|&nbsp; **Slides:** [Here!]()
 
 </div>
 
