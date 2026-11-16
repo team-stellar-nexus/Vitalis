@@ -7,6 +7,7 @@ Docs page (try it in the browser):  http://localhost:8000/docs
 It works without a trained model too: the stress/cognitive indicators then come back as
 "unavailable" while HRV and respiration (signal-derived) still work.
 """
+import logging
 import math
 import os
 import sys
@@ -25,8 +26,15 @@ from indicators import build_report
 
 CHECKPOINT = os.environ.get("MODEL_PATH", str(Path(__file__).resolve().parent.parent / "artifacts" / "best_model.pt"))
 
-app = FastAPI(title="Astronaut Health API", version="0.1")
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])  # tighten for production
+log = logging.getLogger("vitalis")
+_docs_off = os.environ.get("DISABLE_DOCS") == "1"      # set DISABLE_DOCS=1 on the public server
+app = FastAPI(title="Astronaut Health API", version="0.1",
+              docs_url=None if _docs_off else "/docs",
+              redoc_url=None if _docs_off else "/redoc",
+              openapi_url=None if _docs_off else "/openapi.json")
+# Set CORS_ORIGINS on the server, e.g. "https://yourdomain.com,https://www.yourdomain.com". Default "*" is for local dev only.
+_origins = [o.strip() for o in os.environ.get("CORS_ORIGINS", "*").split(",") if o.strip()]
+app.add_middleware(CORSMiddleware, allow_origins=_origins, allow_methods=["*"], allow_headers=["*"])
 
 _model = None
 _model_info = {"loaded": False, "path": CHECKPOINT, "num_classes": None, "error": None}
@@ -48,8 +56,16 @@ def load_model():
         _model = m
         _model_info.update(loaded=True, num_classes=n)
     except Exception as e:                                   # no torch, no checkpoint, wrong shape...
-        _model_info["error"] = f"{type(e).__name__}: {e}"
+        _model_info["error"] = f"{type(e).__name__}: {e}"          # full detail stays in the server log only
+        log.warning("model load failed: %s", _model_info["error"])
     return _model
+
+
+def _public_model_info():
+    """What the outside world may see: no server paths, no exception text."""
+    return {"loaded": bool(_model_info["loaded"]), "path": Path(CHECKPOINT).name,
+            "num_classes": _model_info["num_classes"],
+            "error": "model_unavailable" if _model_info["error"] else None}
 
 
 def to_model_window(raw_ppg, fs: float):
@@ -67,7 +83,7 @@ def to_model_window(raw_ppg, fs: float):
 
 
 def predict_probs(window) -> Optional[Tuple[float, float, float]]:
-    """(p_low, p_moderate, p_high), or None if no model is available."""
+    """(p_low, p_moderate, p_high), or None if no model is available. p_moderate is None for a binary model."""
     m = load_model()
     if m is None or window is None:
         return None
@@ -76,7 +92,7 @@ def predict_probs(window) -> Optional[Tuple[float, float, float]]:
         logits, _ = m(torch.from_numpy(window).unsqueeze(0))
         p = torch.softmax(logits, dim=1)[0].numpy()
     if len(p) == 2:                                          # binary model: (not stress, stress)
-        return (float(p[0]), 0.0, float(p[1]))
+        return (float(p[0]), None, float(p[1]))
     return tuple(float(x) for x in p)
 
 
@@ -92,9 +108,9 @@ def _clean(o):
 
 
 class ReportRequest(BaseModel):
-    ppg: List[float] = Field(..., description="Raw PPG/BVP samples, newest last. Send at least 30 s.")
+    ppg: List[float] = Field(..., max_length=30000, description="Raw PPG/BVP samples, newest last. Send at least 30 s (max 30000 samples).")
     fs: float = Field(64.0, gt=0, description="Sampling rate of `ppg` in Hz (E4 BVP = 64)")
-    ibi_ms: Optional[List[float]] = Field(None, description="Inter-beat intervals in ms for the same period")
+    ibi_ms: Optional[List[float]] = Field(None, max_length=3000, description="Inter-beat intervals in ms for the same period")
     baseline: Optional[Dict[str, Tuple[float, float]]] = Field(
         None, description='Calm baseline as {"rmssd": [mean, std], "resp_rate": [...], "hr": [...]}')
     cabin_co2_ppm: Optional[float] = None
@@ -103,7 +119,7 @@ class ReportRequest(BaseModel):
 @app.get("/health")
 def health():
     load_model()
-    return {"status": "ok", "model": _model_info}
+    return {"status": "ok", "model": _public_model_info()}
 
 
 @app.post("/report")
@@ -123,5 +139,5 @@ def report(req: ReportRequest):
                        baseline=req.baseline, cabin_co2_ppm=req.cabin_co2_ppm)
     rep["probabilities"] = None if probs is None else {"low": probs[0], "moderate": probs[1], "high": probs[2]}
     rep["notes"] = notes
-    rep["model"] = _model_info
+    rep["model"] = _public_model_info()
     return _clean(rep)
