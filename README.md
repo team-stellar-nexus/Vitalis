@@ -299,6 +299,35 @@ Each dataset keeps its own license, which is summarised in [`docs/DATA.md`](docs
 
 Parts of the code, debugging and documentation were produced with help from Claude (Anthropic).
 
+
+## AI / SI Usage & Disclosure
+
+In accordance with the NASA Space Apps Challenge 2026 guidelines, we
+acknowledge the use of Artificial Intelligence (AI) tools during the
+development of Vitalis.
+
+### Where AI was used
+
+- **Code Development:** AI tools were used to assist with selected
+  code development, debugging, code explanations, and implementation
+  improvements. All generated or suggested code was reviewed,
+  tested, and integrated by the development team.
+
+- **Data Processing:** AI assistance was used for [describe actual
+  data-processing tasks, if applicable].
+
+- **Model Development:** [Disclose any AI assistance used in model
+  architecture, training, evaluation, or optimization.]
+
+- **Documentation:** AI tools assisted in preparing and improving
+  selected project documentation.
+
+### Human Contribution
+
+The project architecture, technical decisions, integration,
+verification, and final implementation were reviewed and validated
+by the team. 
+
 ## Team Stellar Nexus
 
 | Name | Role | GitHub |
